@@ -1,0 +1,26 @@
+
+services:
+  mysql_db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Jx12345678
+      MYSQL_DATABASE: db_01
+    ports:
+      - "3307:3306"
+    restart: unless-stopped
+
+  flask_app:
+    build: .                                   # 假设你的Dockerfile和app.py都在当前目录
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql_db
+    environment:
+      DB_HOST: mysql_db
+      DB_USER: root
+      DB_PASSWORD: Jx12345678
+      DB_NAME: db_01
+    restart: unless-stopped
+    # 如果需要，可以加 volumes 挂载代码，便于开发：
+    # volumes:
+    #   - ./:/app

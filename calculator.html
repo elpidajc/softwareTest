@@ -1,0 +1,14 @@
+<!-- calculator.html -->
+<input id="num1" type="text">
+<input id="num2" type="text">
+<button onclick="calculate()">Calculate</button>
+<div id="result"></div>
+
+<script>
+function calculate() {
+    const a = parseFloat(document.getElementById('num1').value);
+    const b = parseFloat(document.getElementById('num2').value);
+    const result = a + b; // 简化为加法示例
+    document.getElementById('result').innerText = result;
+}
+</script>

@@ -1,0 +1,9 @@
+operation,a,b,expected_result
+add,2,3,5.00
+add,-1,1,0.00
+subtract,5,3,2.00
+multiply,4,2.5,10.00
+divide,10,2,5.00
+divide,10,0,"Error: Division by zero"
+invalid,abc,1,"Invalid input"
+invalid,1,xyz,"Invalid input"
